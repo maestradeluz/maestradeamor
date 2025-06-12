@@ -80,7 +80,7 @@ lazyImages.forEach(img => {
 });
 
 function getWhatsAppLink() {
-    const phoneNumber = "+50256683576";
+    const phoneNumber = "+529994498188";
     const message = "¡Hola! Me interesa una consulta, ¿me puedes dar más información?";
     const encodedMessage = encodeURIComponent(message);
     return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

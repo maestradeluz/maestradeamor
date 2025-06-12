@@ -78,3 +78,10 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
 lazyImages.forEach(img => {
     imageObserver.observe(img);
 });
+
+function getWhatsAppLink() {
+    const phoneNumber = "+50256683576";
+    const message = "¡Hola! Me interesa una consulta, ¿me puedes dar más información?";
+    const encodedMessage = encodeURIComponent(message);
+    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+}

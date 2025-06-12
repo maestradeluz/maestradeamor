@@ -19,7 +19,7 @@ body {
 }
 
 header {
-  background-image: url('/assets/maestra.png');
+  background-image: url('assets/maestra.png');
   background-size: cover;
   background-position: center;
   position: relative;

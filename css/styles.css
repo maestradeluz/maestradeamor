@@ -214,7 +214,7 @@ ul li {
 }
 
 .testimonio {
-  flex: 0 0 300px;
+  flex: 0 0 250px;
   background-color: white;
   padding: 1.5rem;
   border-radius: 8px;
@@ -223,9 +223,15 @@ ul li {
   border-left: 4px solid var(--primary-color);
 }
 
-.testimonio p {
-  font-style: italic;
+.testimonio-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   margin-bottom: 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .whatsapp-btn {
@@ -266,6 +272,63 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem 0;
+}
+
+.img-emocional {
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: block;
+  object-fit: cover;
+}
+
+.img-duo {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.img-duo img {
+  flex: 1 1 300px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#galeria {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.galeria-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+}
+
+.galeria-carousel img {
+  flex: 0 0 auto;
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  scroll-snap-align: center;
+  transition: transform 0.3s ease;
+}
+
+.galeria-carousel img:hover {
+  transform: scale(1.03);
 }
 
 @media (max-width: 768px) {

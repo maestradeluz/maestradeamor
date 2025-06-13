@@ -87,12 +87,12 @@ function getWhatsAppLink() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const navToggle = document.getElementById('nav-toggle');
-  const navLinks = document.querySelectorAll('.nav-menu a');
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.querySelectorAll('.nav-menu a');
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.checked = false; // cierra el menú
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle.checked = false; 
+        });
     });
-  });
 });

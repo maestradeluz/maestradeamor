@@ -393,6 +393,23 @@ footer {
   z-index: 1;
 }
 
+.servicio {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.servicio:hover {
+  transform: translateY(-5px);
+  text-decoration: none;
+}
+
+.servicio h3,
+.servicio p {
+  pointer-events: none;
+  /* Para que el clic funcione en toda el área */
+}
+
 
 @media (max-width: 768px) {
   header h1 {

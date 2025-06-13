@@ -348,4 +348,23 @@ footer {
   .servicios-grid {
     grid-template-columns: 1fr;
   }
+
+  .img-emocional,
+  .testimonio-img,
+  .galeria-carousel img {
+    width: 90%;
+    max-height: 250px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .img-duo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-duo img {
+    width: 90%;
+    max-height: 250px;
+  }
 }

@@ -92,7 +92,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navToggle.checked = false; 
+            navToggle.checked = false;
         });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sliders = document.querySelectorAll(".antes-despues-slider");
+
+    sliders.forEach(slider => {
+        const slides = slider.querySelectorAll(".img-slide");
+        let current = 0;
+
+        setInterval(() => {
+            slides[current].classList.remove("active");
+            current = (current + 1) % slides.length;
+            slides[current].classList.add("active");
+        }, 3000);
     });
 });

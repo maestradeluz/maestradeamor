@@ -175,6 +175,12 @@ ul li {
   margin-bottom: 0.8rem;
 }
 
+.beneficios {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+}
+
 .beneficios li::before {
   content: "\2713";
   color: var(--secondary-color);

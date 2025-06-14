@@ -195,19 +195,21 @@ ul li {
 
 .whatsapp-btn {
   display: inline-block;
-  background-color: #25d366;
+  background: linear-gradient(to right, #ffcc00, #b8860b);
   color: white;
   padding: 1rem 2rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  animation: pulse 1.8s infinite;
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.4);
   margin-top: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .whatsapp-btn:hover {
-  background: linear-gradient(to right, #ffd700, #b8860b);
-  box-shadow: 0 0 15px #fff700;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
 }
 
 .whatsapp-floating {
@@ -527,5 +529,22 @@ footer {
   .logo-ubicacion {
     margin-top: 0;
     font-size: 1rem;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+    }
+
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+    }
+
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+    }
   }
 }

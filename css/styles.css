@@ -109,6 +109,26 @@ header h1 {
   font-size: 1.2rem;
 }
 
+.logo-nombre {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  text-shadow: 0 0 8px #000;
+}
+
+.logo-ubicacion {
+  font-family: 'Georgia', serif;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 0.1rem;
+}
+
+.logo-nombre,
+.logo-ubicacion {
+  display: block;
+  width: 100%;
+}
+
 .nav-menu {
   list-style: none;
   display: flex;
@@ -496,5 +516,16 @@ footer {
 
   .testimonios-grid {
     grid-template-columns: 1fr;
+  }
+
+  .nav-logo {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo-ubicacion {
+    margin-top: 0;
+    font-size: 1rem;
   }
 }

@@ -218,10 +218,11 @@ ul li {
 
 .whatsapp-floating {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 50px;
+  right: 5px;
   z-index: 1000;
   transition: transform 0.3s ease;
+  animation: whatsappPulseGlow 2.5s infinite ease-in-out;
 }
 
 .whatsapp-floating:hover {
@@ -229,8 +230,8 @@ ul li {
 }
 
 .whatsapp-icon {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
 }
 
 footer {
@@ -486,7 +487,7 @@ footer {
 }
 
 .logo-icono {
-   width: 55px;
+  width: 55px;
   height: 55px;
   object-fit: contain;
   animation: aparecerMistico 1.5s ease-out forwards;
@@ -508,6 +509,19 @@ footer {
   font-family: 'Georgia', serif;
   font-size: 0.9rem;
   color: #ccc;
+}
+
+.aviso-mayores {
+  background-color: #2c0000;
+  color: #ffcc00;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  text-shadow: 0 0 4px #000;
+  border-top: 1px solid #ffcc00;
+  border-bottom: 1px solid #ffcc00;
 }
 
 @media (max-width: 768px) {
@@ -576,31 +590,33 @@ footer {
 }
 
 @keyframes pulse {
-    0% {
-      transform: scale(1);
-      box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
-    }
-
-    50% {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
-    }
-
-    100% {
-      transform: scale(1);
-      box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
-    }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
   }
 
-  @keyframes aparecerMistico {
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+  }
+}
+
+@keyframes aparecerMistico {
   0% {
     opacity: 0;
     transform: scale(0.7) rotate(-10deg);
     filter: drop-shadow(0 0 0px transparent);
   }
+
   70% {
     filter: drop-shadow(0 0 20px gold);
   }
+
   100% {
     opacity: 1;
     transform: scale(1) rotate(0deg);
@@ -608,3 +624,19 @@ footer {
   }
 }
 
+@keyframes whatsappPulseGlow {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px #ffcc00);
+  }
+
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 16px #ffcc00);
+  }
+
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px #ffcc00);
+  }
+}

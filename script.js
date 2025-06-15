@@ -68,9 +68,9 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const img = entry.target;
-            img.src = img.dataset.src; // Reemplaza data-src por src
-            img.removeAttribute('data-src'); // Limpia el atributo data-src
-            observer.unobserve(img); // Deja de observar esta imagen
+            img.src = img.dataset.src; 
+            img.removeAttribute('data-src');
+            observer.unobserve(img);
         }
     });
 });

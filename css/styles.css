@@ -1,14 +1,17 @@
-/* Importamos las fuentes elegantes (Playfair y Montserrat) */
+/* Importamos las fuentes elegantes */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
 
 :root {
-  /* PALETA PASTEL LIGERA (Sin efectos pesados) */
-  --bg-color: #FFFBF0; /* Fondo crema sólido */
-  --card-bg: #ffffff; /* Fondo de tarjetas blanco */
-  --accent-color: #CB968B; /* Oro Rosado */
-  --title-color: #A85A4F; /* Terracota oscuro (Para que se lea bien) */
-  --text-color: #4A3B55; /* Violeta oscuro */
-  --soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra ligera */
+  /* PALETA PASTEL LIGERA */
+  --bg-color: #FFFBF0; 
+  --card-bg: #ffffff;
+  --accent-color: #CB968B; 
+  
+  /* Color Vino/Terracota intenso para contraste */
+  --title-color: #752935; 
+  
+  --text-color: #4A3B55; 
+  --soft-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
 }
 
 * {
@@ -18,7 +21,7 @@
 }
 
 body {
-  background-color: var(--bg-color); /* Fondo sólido, mucho más rápido */
+  background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
@@ -34,10 +37,10 @@ h2 {
   font-size: 2.2rem;
   margin-bottom: 2rem;
   text-align: center;
-  text-shadow: none; /* Quitamos sombras pesadas de texto */
+  text-shadow: 1px 1px 0px #fff; 
 }
 
-/* HEADER LIGERO */
+/* HEADER - EFECTO FINAL */
 header {
   background-image: url('../assets/maestra.png');
   background-size: cover;
@@ -47,42 +50,51 @@ header {
   padding: 8rem 1rem;
 }
 
-/* Capa simple para oscurecer/aclarar fondo sin filtros complejos */
+/* Capa transparente muy suave */
 header::before {
   content: "";
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  /* Degradado blanco simple para que se lea el texto sobre la foto */
-  background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,240,245,0.8)); 
+  /* Degradado suave para integrar la foto */
+  background: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,240,245,0.6)); 
   z-index: 0;
 }
 
 header h1 {
-  font-size: 3.5rem;
+  font-size: 4rem; 
   margin-bottom: 1rem;
   position: relative;
   z-index: 1;
   color: var(--title-color);
-  /* Sombra blanca sólida para separar letras del fondo (muy ligero para el CPU) */
-  text-shadow: 2px 2px 0px #fff; 
+  font-weight: 700;
+  
+  /* EFECTO HALO INTENSO EN TÍTULO */
+  text-shadow: 
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #fff; 
 }
 
+/* INTRODUCCIÓN SIN RECUADRO */
 header .intro {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto;
+  font-size: 1.3rem; 
+  max-width: 800px;
+  margin: 1rem auto 0;
   position: relative;
   z-index: 1;
-  font-weight: 600;
-  color: var(--text-color);
-  background: rgba(255, 255, 255, 0.7); /* Fondo semitransparente simple */
-  padding: 1rem;
-  border-radius: 10px;
+  font-weight: 700; 
+  color: var(--title-color);
+  
+  /* Resplandor blanco suave para que se lea sobre la foto sin caja */
+  text-shadow: 
+    0 0 5px #fff, 
+    0 0 10px #fff,
+    1px 1px 0 #fff;
 }
 
 /* NAVEGACIÓN SIMPLE */
 .navbar {
-  background-color: #fff; /* Fondo blanco sólido */
+  background-color: #fff;
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
@@ -130,7 +142,7 @@ header .intro {
   text-transform: uppercase;
 }
 
-/* BOTÓN CTA VERDE/DORADO */
+/* BOTÓN CTA MENU */
 .cta-nav {
   background-color: var(--accent-color);
   color: white !important;
@@ -142,7 +154,7 @@ header .intro {
 
 /* AVISO +18 */
 .aviso-mayores {
-  background-color: #FFE4E1; /* Rosa muy pálido */
+  background-color: #FFE4E1; 
   color: #8a3b49;
   text-align: center;
   padding: 0.8rem;
@@ -155,6 +167,8 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  /* Asegura que el contenido general esté alineado, aunque los botones se centran solos */
+  text-align: center; 
 }
 
 .mensaje-garantia {
@@ -165,13 +179,13 @@ main {
   margin-bottom: 2rem;
 }
 
-/* SECCIONES (Cajas blancas limpias) */
+/* SECCIONES */
 section {
   background-color: var(--card-bg);
   border-radius: 15px;
   margin: 3rem auto;
   padding: 2rem;
-  box-shadow: var(--soft-shadow); /* Sombra suave estática */
+  box-shadow: var(--soft-shadow);
   border: 1px solid #f0f0f0;
 }
 
@@ -188,7 +202,7 @@ section {
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
-  transition: transform 0.3s ease; /* Solo animamos movimiento, no filtros */
+  transition: transform 0.3s ease; 
   text-decoration: none;
   color: inherit;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -238,9 +252,12 @@ section {
 
 .origen { font-style: italic; color: var(--accent-color); font-weight: 600; }
 
-/* BOTONES WHATSAPP */
+/* BOTONES WHATSAPP - CORREGIDO PARA CENTRAR */
 .whatsapp-btn {
-  display: inline-flex;
+  display: flex; /* Cambiado de inline-flex a flex */
+  width: fit-content; /* Se ajusta al contenido */
+  margin: 2rem auto; /* Centrado automático horizontal */
+  
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -250,9 +267,7 @@ section {
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
-  margin: 2rem auto;
   transition: transform 0.2s;
-  /* Animación simple */
   animation: pulse 2s infinite; 
 }
 .boton-container { text-align: center; }
@@ -272,7 +287,7 @@ section {
 }
 .img-unica-transformacion img { width: 100%; display: block; }
 .texto-transformacion {
-  background: rgba(255, 255, 255, 0.9); /* Fondo casi sólido */
+  background: rgba(255, 255, 255, 0.9);
   padding: 1.5rem;
   text-align: center;
   border-top: 4px solid var(--accent-color);
@@ -315,12 +330,12 @@ footer {
 .whatsapp-floating:hover { transform: scale(1.1); }
 .whatsapp-icon { width: 60px; height: 60px; }
 
-/* RESPONSIVE (Móvil) */
+/* RESPONSIVE */
 .nav-toggle, .nav-toggle-label { display: none; }
 
 @media (max-width: 768px) {
   .nav-menu {
-    display: none; /* Oculto por defecto */
+    display: none; 
     flex-direction: column;
     position: absolute;
     top: 60px; left: 0; width: 100%;
@@ -332,7 +347,7 @@ footer {
   .nav-toggle:checked ~ .nav-menu { display: flex; }
   .nav-toggle-label { display: block; font-size: 1.5rem; color: var(--accent-color); }
   
-  header h1 { font-size: 2.5rem; }
+  header h1 { font-size: 2.8rem; }
   .servicios-grid, .testimonios-grid { grid-template-columns: 1fr; }
 }
 

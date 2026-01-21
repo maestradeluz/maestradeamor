@@ -301,29 +301,17 @@ h2 {
 }
 
 .whatsapp-btn {
-
   display: inline-block;
-
   background: linear-gradient(to right, #ffcc00, #b8860b);
-
   color: white;
-
   padding: 1rem 2rem;
-
   border-radius: 50px;
-
   text-decoration: none;
-
   font-weight: bold;
-
   animation: pulse 1.8s infinite;
-
   box-shadow: 0 0 12px rgba(255, 204, 0, 0.4);
-
   margin-top: 1rem;
-
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
 
 .whatsapp-btn:hover {
@@ -381,6 +369,20 @@ footer {
 .nav-toggle,
 .nav-toggle-label {
   display: none;
+}
+
+footer a {
+  color: #b0b0b0 !important;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  /* Sin raya al principio */
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #FFD700 !important;
+  border-bottom: 1px solid #FFD700;
+  text-shadow: 0 0 5px #FFD700;
 }
 
 @media (max-width: 768px) {

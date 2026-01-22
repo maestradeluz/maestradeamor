@@ -56,12 +56,12 @@ header h1 {
   text-transform: uppercase;
   font-weight: 700;
 
-  color: #FFD700;
+  color: #DAA520;
   text-shadow:
-    0 0 10px #FFD700,
-    0 0 20px #FF8C00,
-    0 0 40px #FF8C00,
-    2px 2px 4px #000;
+    0 0 10px #DAA520,
+    0 0 20px #B8860B,
+    0 0 30px #B8860B,   
+    2px 2px 4px #000000;
 }
 
 .intro {

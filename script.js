@@ -1,225 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // Smooth scrolling para los enlaces de navegación
-
-    const navLinks = document.querySelectorAll('nav a');
-
-    navLinks.forEach(link => {
-
-        link.addEventListener('click', (e) => {
-
-            e.preventDefault();
-
-            const targetId = link.getAttribute('href');
-
-            const targetElement = document.querySelector(targetId);
-
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-
+    // 1. MENÚ MÓVIL
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    if (navToggle) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.checked = false;
+            });
         });
+    }
 
-    });
-
-
-
-    // Animación simple para los servicios
-
-    const servicios = document.querySelectorAll('.servicio');
-
-    const observerOptions = {
-
-        threshold: 0.5,
-
-        rootMargin: '0px 0px -50px 0px'
-
-    };
-
-
-
-    const observer = new IntersectionObserver((entries) => {
-
+    // 2. SCROLL REVEAL (Aparición mágica)
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-
             if (entry.isIntersecting) {
-
-                entry.target.style.opacity = '1';
-
-                entry.target.style.transform = 'translateY(0)';
-
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
-
         });
-
     }, observerOptions);
 
-
-
-    servicios.forEach(servicio => {
-
-        servicio.style.opacity = '0';
-
-        servicio.style.transform = 'translateY(20px)';
-
-        servicio.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-
-        observer.observe(servicio);
-
+    const elements = document.querySelectorAll('section, .servicio, .testimonio-card, .img-unica-transformacion');
+    elements.forEach(el => {
+        el.classList.add('fade-init'); 
+        observer.observe(el);
     });
 
-
-
-    // Carrusel simple para testimonios
-
-    const testimoniosCarousel = document.querySelector('.testimonios-carousel');
-
-    let isDown = false;
-
-    let startX;
-
-    let scrollLeft;
-
-
-
-    testimoniosCarousel.addEventListener('mousedown', (e) => {
-
-        isDown = true;
-
-        startX = e.pageX - testimoniosCarousel.offsetLeft;
-
-        scrollLeft = testimoniosCarousel.scrollLeft;
-
-    });
-
-
-
-    testimoniosCarousel.addEventListener('mouseleave', () => {
-
-        isDown = false;
-
-    });
-
-
-
-    testimoniosCarousel.addEventListener('mouseup', () => {
-
-        isDown = false;
-
-    });
-
-
-
-    testimoniosCarousel.addEventListener('mousemove', (e) => {
-
-        if (!isDown) return;
-
-        e.preventDefault();
-
-        const x = e.pageX - testimoniosCarousel.offsetLeft;
-
-        const walk = (x - startX) * 2;
-
-        testimoniosCarousel.scrollLeft = scrollLeft - walk;
-
-    });
-
-});
-
-
-
-// Lazy loading para imágenes
-
-const lazyImages = document.querySelectorAll('img[data-src]');
-
-const imageObserver = new IntersectionObserver((entries, observer) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            const img = entry.target;
-
-            img.src = img.dataset.src;
-
-            img.removeAttribute('data-src');
-
-            observer.unobserve(img);
-
-        }
-
-    });
-
-});
-
-
-
-lazyImages.forEach(img => {
-
-    imageObserver.observe(img);
-
-});
-
-
-
-function getWhatsAppLink() {
-
-    const phoneNumber = "+529834539979";
-
-    const message = "¡Hola! Me interesa una consulta, ¿me puedes dar más información?";
-
-    const encodedMessage = encodeURIComponent(message);
-
-    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-}
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    const navToggle = document.getElementById('nav-toggle');
-
-    const navLinks = document.querySelectorAll('.nav-menu a');
-
-
-
-    navLinks.forEach(link => {
-
-        link.addEventListener('click', () => {
-
-            navToggle.checked = false;
-
+    // 3. LAZY LOAD
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    if (lazyImages.length > 0) {
+        const imgObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
         });
-
-    });
-
+        lazyImages.forEach(img => imgObserver.observe(img));
+    }
 });
 
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const sliders = document.querySelectorAll(".antes-despues-slider");
-
-
-
-    sliders.forEach(slider => {
-
-        const slides = slider.querySelectorAll(".img-slide");
-
-        let current = 0;
-
-
-
-        setInterval(() => {
-
-            slides[current].classList.remove("active");
-
-            current = (current + 1) % slides.length;
-
-            slides[current].classList.add("active");
-
-        }, 3000);
-
-    });
-
-});
+// WHATSAPP
+function getWhatsAppLink() {
+    const phoneNumber = "+529834539979";
+    const message = "¡Hola Sara! Necesito ayuda urgente con un tema de amor. ¿Podría asesorarme?";
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const baseUrl = isMobile ? "https://api.whatsapp.com/send" : "https://web.whatsapp.com/send";
+    return `${baseUrl}?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+}

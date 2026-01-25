@@ -17,13 +17,13 @@
 }
 
 html {
-  overflow-x: visible; 
+  overflow-x: visible;
   width: 100%;
 }
 
 body {
   width: 100%;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   position: relative;
   touch-action: pan-y;
 }
@@ -130,7 +130,7 @@ header h1 {
   -webkit-backdrop-filter: none;
 }
 
-.navbar::before{
+.navbar::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -235,7 +235,7 @@ h2::after {
   margin: 15px auto 0;
 }
 
-#confidencialidad h2{
+#confidencialidad h2 {
   max-width: 100%;
 }
 
@@ -243,6 +243,11 @@ h2::after {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+}
+
+#servicios {
+  margin-top: 6rem;
+  padding-top: 2rem;
 }
 
 .servicio {
@@ -727,21 +732,21 @@ footer {
   display: none;
 }
 
-@media (max-width: 480px){
-  h2{
-    font-size: 1.75rem;      
-    letter-spacing: 1px;    
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
     line-height: 1.12;
     margin-bottom: 1.6rem;
   }
 
-  .exclusivo-inner{
-    padding: 1.6rem 1rem;    
+  .exclusivo-inner {
+    padding: 1.6rem 1rem;
   }
 }
 
-@media (max-width: 620px){
-  #confidencialidad h2{
+@media (max-width: 620px) {
+  #confidencialidad h2 {
     font-size: 2rem;
     letter-spacing: 1px;
     line-height: 1.12;
@@ -813,11 +818,15 @@ footer {
     padding: 1rem 1.4rem;
   }
 
-  h2{
-  max-width: 100%;
-  padding-inline: 0.5rem;
-  text-wrap: balance;       
-  word-break: break-word;    
-  hyphens: auto;
-}
+  h2 {
+    max-width: 100%;
+    padding-inline: 0.5rem;
+    text-wrap: balance;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  #servicios {
+    margin-top: 4rem;
+  }
 }

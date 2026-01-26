@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // WHATSAPP
 function getWhatsAppLink() {
-    const phoneNumber = "+50239424651";
+    const phoneNumber = "+50239424561";
     const message = "¡Hola Sara! Necesito ayuda. ¿Podría asesorarme?";
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     const baseUrl = isMobile ? "https://api.whatsapp.com/send" : "https://web.whatsapp.com/send";

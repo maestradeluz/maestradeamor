@@ -624,44 +624,145 @@ footer {
 }
 
 @keyframes zoomStars {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes floatUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes spinSlow {
-  100% { transform: rotate(360deg); }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes bgPulse {
-  0% { background-position: 50% 50%; }
-  100% { background-position: 50% 55%; }
+  0% {
+    background-position: 50% 50%;
+  }
+
+  100% {
+    background-position: 50% 55%;
+  }
 }
 
 @keyframes textGlow {
-  0% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
-  100% { text-shadow: 0 0 25px rgba(255, 215, 0, 0.6); }
+  0% {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  }
+
+  100% {
+    text-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+  }
 }
 
 @keyframes pulseElegant {
-  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
-  70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+}
+
+.fade-init {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-toggle,
+.nav-toggle-label {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+    line-height: 1.12;
+    margin-bottom: 1.6rem;
+  }
+
+  .exclusivo-inner {
+    padding: 1.6rem 1rem;
+  }
+}
+
+@media (max-width: 620px) {
+  #confidencialidad h2 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    line-height: 1.12;
+  }
 }
 
 @media (max-width: 768px) {
-  header { padding: 9rem 1rem 5rem; }
-  header h1 { font-size: 2.5rem; }
+  header {
+    padding: 9rem 1rem 5rem;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  .nav-toggle-label {
+    display: block;
+    color: var(--gold);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
   .nav-menu {
     display: none;
     flex-direction: column;
@@ -671,8 +772,55 @@ footer {
     width: 100%;
     background: rgba(20, 10, 5, 0.98);
     padding: 1.5rem;
+    border-bottom: 1px solid var(--gold-dark);
   }
-  .nav-toggle:checked ~ .nav-menu { display: flex; }
-  .servicios-grid, .testimonios-grid { grid-template-columns: 1fr; }
-  .pasos-grid, .sellos-grid { grid-template-columns: 1fr; }
+
+  .nav-toggle:checked~.nav-menu {
+    display: flex;
+  }
+
+  .servicios-grid,
+  .testimonios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .texto-premium {
+    font-size: 1.02rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pasos-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .paso-card {
+    padding: 1.2rem 1.1rem;
+  }
+
+  .sellos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exclusivo-inner {
+    padding: 1.8rem 1.1rem;
+  }
+
+  .whatsapp-btn {
+    width: 100%;
+    max-width: 420px;
+    padding: 1rem 1.4rem;
+  }
+
+  h2 {
+    max-width: 100%;
+    padding-inline: 0.5rem;
+    text-wrap: balance;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  #servicios {
+    margin-top: 4rem;
+  }
 }
